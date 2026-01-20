@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blood Bank Management System</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dark-theme">
+
+<!-- FULL SCREEN WRAPPER -->
+<div class="container-fluid full-screen">
+
+  <!-- TITLE -->
+  <h2 class="text-center title-glow mb-5">
+    BLOOD BANK MANAGEMENT SYSTEM
+  </h2>
+
+  <div class="row g-4">
+
+    <!-- LEFT: DONOR FORM -->
+    <div class="col-lg-4">
+      <div class="card futuristic-card p-4">
+        <h5 class="mb-3 text-danger">Add Donor</h5>
+
+        <input id="name" class="form-control mb-3" placeholder="Donor Name">
+        <input id="age" type="number" class="form-control mb-3" placeholder="Age">
+
+        <select id="blood" class="form-control mb-3">
+          <option value="">Select Blood Group</option>
+          <option>A+</option><option>A-</option>
+          <option>B+</option><option>B-</option>
+          <option>O+</option><option>O-</option>
+          <option>AB+</option><option>AB-</option>
+        </select>
+
+        <button class="btn btn-danger w-100" onclick="addDonor()">
+          ADD DONOR
+        </button>
+      </div>
+    </div>
+
+    <!-- RIGHT: SEARCH + TABLE -->
+    <div class="col-lg-8">
+      <div class="card futuristic-card p-4">
+
+        <input id="search"
+               class="form-control mb-4"
+               placeholder="Search by Blood Group (A+, O-...)"
+               onkeyup="searchDonor()">
+
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead class="table-danger">
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Blood Group</th>
+              </tr>
+            </thead>
+            <tbody id="donorTable"></tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
